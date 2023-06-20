@@ -8,12 +8,9 @@ const App = () => {
   const [state, setState] = useState(themes.light);
 
   const toggleTheme = () => {
-    console.log(111);
     const newTheme = state === themes.dark ? themes.light : themes.dark;
     setState(newTheme);
   };
-
-  console.log(state);
 
   return (
     <div>
