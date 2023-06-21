@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <div className="page">
-      <UserDataContext.Provider value={state}>
+      <UserDataContext.Provider value={state.userData}>
         <Header />
       </UserDataContext.Provider>
     </div>
