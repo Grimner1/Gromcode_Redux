@@ -5,4 +5,4 @@ export const userData = {
   avatar_url: "https://avatars3.githubusercontent.com/u10001",
 };
 
-export const UserDataContext = React.createContext(userData);
+export const UserDataContext = React.createContext();

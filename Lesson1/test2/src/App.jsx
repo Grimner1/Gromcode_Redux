@@ -4,7 +4,12 @@ import Header from "./Header";
 import { userData, UserDataContext } from "./context";
 
 const App = () => {
-  const [state, setState] = useState(userData);
+  const [state, setState] = useState({
+    userData = {
+      name: "Nikola Tesla",
+      avatar_url: "https://avatars3.githubusercontent.com/u10001",
+    };
+  });
 
   return (
     <div className="page">
