@@ -1,26 +1,33 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App.jsx";
+
 import { createStore } from "redux";
 
 const INCREMENT = "COUNTER/INCREMENT";
 const DECREMENT = "COUNTER/DECREMENT";
 
 export const increment = () => {
-  type: INCREMENT;
+  return { type: INCREMENT };
 };
 
 export const decrement = () => {
-  type: DECREMENT;
+  return { type: DECREMENT };
 };
 
 const counterReduce = (state = 0, action) => {
   switch (action.type) {
-    case "INCREMENT":
+    case "COUNTER/INCREMENT":
       return state + 1;
-    case "DISCREMENT":
+    case "COUNTER/DECREMENT":
       return state + 2;
-
     default:
       return state;
   }
 };
 
 export const store = createStore(counterReduce);
+
+const rootElement = document.querySelector("#root");
+
+ReactDOM.render(<App />, rootElement);
