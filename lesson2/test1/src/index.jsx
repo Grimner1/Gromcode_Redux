@@ -16,7 +16,7 @@ const counterReduce = (state = 0, action) => {
     case "COUNTER/INCREMENT":
       return state + 1;
     case "COUNTER/DECREMENT":
-      return state + 2;
+      return state - 1;
     default:
       return state;
   }
