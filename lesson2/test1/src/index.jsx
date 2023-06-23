@@ -1,7 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App.jsx";
-
 import { createStore } from "redux";
 
 const INCREMENT = "COUNTER/INCREMENT";
@@ -27,7 +23,3 @@ const counterReduce = (state = 0, action) => {
 };
 
 export const store = createStore(counterReduce);
-
-const rootElement = document.querySelector("#root");
-
-ReactDOM.render(<App />, rootElement);
