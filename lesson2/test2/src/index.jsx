@@ -1,8 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './App.jsx';
+import "./index.scss";
 
-const rootElement = document.querySelector('#root');
+import store, { increment, decrement, reset } from "./store";
 
-ReactDOM.render(<App />, rootElement);
+const resultElem = document.querySelector(".counter__result");
+const incrementBtn = document.querySelector('[data-action="increment"]');
+const resetBtn = document.querySelector('[data-action="reset"]');
+const decrementBtn = document.querySelector('[data-action="decrement"]');
+
+const onIncrement = () => {
+  store.dispatch(increment());
+};
+
+const onDiscrement = () => {
+  store.dispatch(decrement());
+};
+
+const onReset = () => {
+  store.dispatch(reset());
+};
+
+incrementBtn.addEventListener("click", onIncrement);
+
+decrementBtn.addEventListener("click", onDiscrement);
+
+resetBtn.addEventListener("click", onReset);
+
+store.subscribe(() => {
+  const state = store.getState();
+  const currentValue = state.value;
+  const historyString = state.history.join("");
+  resultElem.textContent =
+    state.history.length == 0 ? "" : `${historyString} = ${currentValue}`;
+});
