@@ -1,8 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './App.jsx';
+import store from "./store";
+import { addUser, delUser } from "./users.actions";
 
-const rootElement = document.querySelector('#root');
+const user1 = {
+  id: 76,
+  name: "Sarah",
+};
 
-ReactDOM.render(<App />, rootElement);
+const user2 = {
+  id: 21,
+  name: "Jude",
+};
+
+const user3 = {
+  id: 3,
+  name: "Ya-Ya",
+};
+
+console.log(store);
+store.dispatch(addUser(user1));
+store.dispatch(addUser(user2));
+store.dispatch(addUser(user3));
+store.dispatch(delUser(76));
+store.dispatch(delUser(3));
+store.dispatch(delUser(33));
+console.log(store.getState());
