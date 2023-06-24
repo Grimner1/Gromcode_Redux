@@ -10,7 +10,7 @@ export const addUser = (userData) => {
   };
 };
 
-export const delUser = (id) => {
+export const deleteUser = (id) => {
   return {
     type: DEL,
     id,

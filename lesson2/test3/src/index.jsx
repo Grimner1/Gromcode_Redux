@@ -1,5 +1,5 @@
 import store from "./store";
-import { addUser, delUser } from "./users.actions";
+import { addUser, deleteUser } from "./users.actions";
 
 const user1 = {
   id: 76,
@@ -20,7 +20,7 @@ console.log(store);
 store.dispatch(addUser(user1));
 store.dispatch(addUser(user2));
 store.dispatch(addUser(user3));
-store.dispatch(delUser(76));
-store.dispatch(delUser(3));
-store.dispatch(delUser(33));
+store.dispatch(deleteUser(76));
+store.dispatch(deleteUser(3));
+store.dispatch(deleteUser(33));
 console.log(store.getState());
