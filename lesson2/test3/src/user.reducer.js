@@ -1,4 +1,4 @@
-const usersList = [];
+const startState = { usersList: [] };
 
 const add = ({ id, name }, state) => {
   const newUser = { id, name };
@@ -16,7 +16,7 @@ const del = (id, state) => {
   return userList;
 };
 
-const userReducer = (state = usersList, action) => {
+const userReducer = (state = startState.usersList, action) => {
   switch (action.type) {
     case "ADDUSER":
       return add(action.userData, state);
