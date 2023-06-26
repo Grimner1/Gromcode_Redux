@@ -16,7 +16,7 @@ const user3 = {
   name: "Ya-Ya",
 };
 
-console.log(store);
+// console.log(store);
 store.dispatch(addUser(user1));
 store.dispatch(addUser(user2));
 store.dispatch(addUser(user3));

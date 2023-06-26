@@ -2,21 +2,22 @@ const startState = { usersList: [] };
 
 const add = ({ id, name }, state) => {
   const newUser = { id, name };
-  return [...state, newUser];
+  return { usersList: [...state.usersList, newUser] };
 };
 
 const del = (id, state) => {
-  const userList = [...state];
-  const userId = [...state].findIndex((el) => el.id == id);
+  const userList = [...state.usersList];
+  const userId = [...state.usersList].findIndex((el) => el.id == id);
   if (userId == -1) {
     alert("user ID not found");
-    return userList;
+    return { usersList: userList };
   }
   userList.splice(userId, 1);
-  return userList;
+  console.log();
+  return { usersList: userList };
 };
 
-const userReducer = (state = startState.usersList, action) => {
+const userReducer = (state = startState, action) => {
   switch (action.type) {
     case "ADDUSER":
       return add(action.userData, state);
