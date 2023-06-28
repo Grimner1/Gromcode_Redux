@@ -1,17 +1,17 @@
-const initialState = { usersData: [] };
+const initialState = { usersList: [] };
 
 const add = (userData, state) => {
-  return { usersData: [...state.usersData, userData] };
+  return { usersList: [...state.usersList, userData] };
 };
 
 const deleteUs = (userId, state) => {
   return {
-    usersData: [...state.usersData.filter((user) => user.id !== userId)],
+    usersList: [...state.usersList.filter((user) => user.id !== userId)],
   };
 };
 
 const update = (userId, userData, state) => {
-  const newUserData = state.usersData.map((user) => {
+  const newUserData = state.usersList.map((user) => {
     if (user.id == userId) {
       return { ...user, ...userData };
     } else {
@@ -19,7 +19,7 @@ const update = (userId, userData, state) => {
     }
   });
 
-  return { usersData: newUserData };
+  return { usersList: newUserData };
 };
 
 export const usersReducer = (state = initialState, action) => {
