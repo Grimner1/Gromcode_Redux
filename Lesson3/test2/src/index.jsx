@@ -7,8 +7,8 @@
 
 // ReactDOM.render(<App />, rootElement);
 
-import store from "./store";
-import { increment, decrement } from "../../test1/src/counter.actions";
+import store from "./counter";
+import { increment, decrement } from "./counter";
 
 console.log(store);
 
