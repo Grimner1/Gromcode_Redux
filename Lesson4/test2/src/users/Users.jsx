@@ -14,7 +14,7 @@ const Users = ({ users, createUser, deleteUser }) => {
     createUser(newUser);
   };
 
-  console.log(users);
+  console.log(store.getState());
   return (
     <div className="users">
       <button className="users__create-btn" onClick={onUserCreate}>
@@ -25,7 +25,7 @@ const Users = ({ users, createUser, deleteUser }) => {
           <li className="users__list-item" key={user.id}>
             {user.name}
             <button
-              class="users__delete-btn"
+              className="users__delete-btn"
               onClick={() => deleteUser(user.id)}
             >
               +
