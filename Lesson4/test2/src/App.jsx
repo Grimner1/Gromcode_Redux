@@ -1,7 +1,14 @@
-import React from 'react';
+import React from "react";
+import { Provider } from "react-redux";
+import Users from "./users/Users";
+import store from "./store";
 
 const App = () => {
-  return <div>Hello, React!</div>;
+  return (
+    <Provider store={store}>
+      <Users />
+    </Provider>
+  );
 };
 
 //sasas

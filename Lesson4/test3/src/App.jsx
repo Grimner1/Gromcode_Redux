@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
+import Users from "./Users";
 
 const App = () => {
-  return <div>Hello, React!</div>;
+  return <Users />;
 };
 
 //sasas
