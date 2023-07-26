@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import store from "../store";
+// import store from "../store";
 import * as userActions from "./users.actions";
 
 const Users = ({ users, createUser, deleteUser }) => {
@@ -14,7 +14,7 @@ const Users = ({ users, createUser, deleteUser }) => {
     createUser(newUser);
   };
 
-  console.log(store.getState());
+  // console.log(store.getState());
   return (
     <div className="users">
       <button className="users__create-btn" onClick={onUserCreate}>

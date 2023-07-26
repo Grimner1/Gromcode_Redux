@@ -1,8 +1,15 @@
 import React from "react";
-import Users from "./Users";
+import { Provider } from "react-redux";
+import UsersList from "./users/UsersList";
+import { users } from "./users";
+import store from "./store";
 
 const App = () => {
-  return <Users />;
+  return (
+    <Provider store={store}>
+      <UsersList users={users} />
+    </Provider>
+  );
 };
 
 //sasas

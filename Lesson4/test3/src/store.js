@@ -1,12 +1,6 @@
-import { createStore, combineReducers } from "redux";
-import counterReducer from "./counter.reducer";
-import usersReducer from "./user.reducer";
+import { createStore } from "redux";
+import usersListReduser from "./users/usersList.reduser";
 
-const reducer = combineReducers({
-  users: usersReducer,
-  counter: counterReducer,
-});
-
-const store = createStore(reducer);
+const store = createStore(usersListReduser);
 
 export default store;
