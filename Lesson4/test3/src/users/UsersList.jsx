@@ -4,10 +4,10 @@ import * as usersListActions from "./usersList.actions";
 import Pagination from "./Pagination";
 import User from "./User";
 
-const UsersList = ({ usersList, currentPage, goPrev, goNext }) => {
+const UsersList = ({ users, currentPage, goPrev, goNext }) => {
   const itemPerPage = 3;
 
-  const usersToRenderOnPage = usersList.slice(
+  const usersToRenderOnPage = users.slice(
     currentPage * itemPerPage,
     currentPage * itemPerPage + itemPerPage
   );
@@ -18,7 +18,7 @@ const UsersList = ({ usersList, currentPage, goPrev, goNext }) => {
         goPrev={goPrev}
         goNext={goNext}
         itemPerPage={itemPerPage}
-        totalItem={usersList.length}
+        totalItem={users.length}
         currentPage={currentPage}
       />
 
@@ -33,7 +33,7 @@ const UsersList = ({ usersList, currentPage, goPrev, goNext }) => {
 
 const mapState = (state) => {
   return {
-    usersList: state.usersList,
+    users: state.usersList,
     currentPage: state.currentPage,
   };
 };
