@@ -9,12 +9,9 @@ const Pagination = ({
 }) => {
   const isPrevPageAvailable = currentPage == 0;
 
-  const isNextPageAvailablex = () => {
-    const lastPageNumber = Math.floor(totalItems / itemsPerPage);
-    return lastPageNumber == currentPage;
-  };
+  const lastPageNumber = Math.floor(totalItems / itemsPerPage);
 
-  const isNextPageAvailable = isNextPageAvailablex();
+  const isNextPageAvailable = lastPageNumber == currentPage;
 
   return (
     <div className="pagination">
