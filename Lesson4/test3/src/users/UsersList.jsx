@@ -5,11 +5,11 @@ import Pagination from "./Pagination";
 import User from "./User";
 
 const UsersList = ({ users, currentPage, goPrev, goNext }) => {
-  const itemPerPage = 3;
+  const itemsPerPage = 3;
 
   const usersToRenderOnPage = users.slice(
-    currentPage * itemPerPage,
-    currentPage * itemPerPage + itemPerPage
+    currentPage * itemsPerPage,
+    currentPage * itemsPerPage + itemsPerPage
   );
 
   return (
@@ -17,8 +17,8 @@ const UsersList = ({ users, currentPage, goPrev, goNext }) => {
       <Pagination
         goPrev={goPrev}
         goNext={goNext}
-        itemPerPage={itemPerPage}
-        totalItem={users.length}
+        itemsPerPage={itemsPerPage}
+        totalItems={users.length}
         currentPage={currentPage}
       />
 

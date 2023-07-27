@@ -3,14 +3,14 @@ import React from "react";
 const Pagination = ({
   goPrev,
   goNext,
-  itemPerPage,
-  totalItem,
+  itemsPerPage,
+  totalItems,
   currentPage,
 }) => {
   const isPrevPageAvalible = currentPage == 0;
 
   const isNextPageAvalible = () => {
-    const lastPageNumber = Math.floor(totalItem / itemPerPage);
+    const lastPageNumber = Math.floor(totalItems / itemsPerPage);
     return lastPageNumber == currentPage;
   };
 
