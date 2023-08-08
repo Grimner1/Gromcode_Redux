@@ -25,3 +25,9 @@ const usersListReduser = (state = initialState, action) => {
 };
 
 export default usersListReduser;
+
+// ===============
+
+// 1. есть ли входящий ид в селект ид?
+// 1.1. Если есть - то удаляем его;
+// 1.2. Если нету - то добавляем;
