@@ -1,9 +1,14 @@
-import React from 'react';
+import React from "react";
+import { Provider } from "react-redux";
+import store from "./store";
+import UsersList from "./users/UsersList";
 
 const App = () => {
-  return <div>Hello, React!</div>;
+  return (
+    <Provider store={store}>
+      <UsersList />
+    </Provider>
+  );
 };
-
-//sasas
 
 export default App;
