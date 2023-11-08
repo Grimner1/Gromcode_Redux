@@ -6,6 +6,7 @@ import { getWeatherData } from "./weather.actions";
 import WeatherLi from "./WeatherLi";
 
 const Weather = ({ showWeather, weather }) => {
+  console.log(showWeather);
   if (!weather.weather) {
     showWeather();
   }
